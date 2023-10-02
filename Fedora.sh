@@ -20,11 +20,6 @@ sudo sed -i 's/PermitRootLogin yes/PermitRootLogin no/' /etc/ssh/sshd_config
 sudo sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
 sudo systemctl reload sshd
 
-# Install and configure Fail2ban
-echo "Installing and configuring Fail2ban..."
-sudo dnf install fail2ban -y
-sudo systemctl enable fail2ban
-sudo systemctl start fail2ban
 
 # Install dnf-automatic for automatic security updates
 echo "Setting up automatic security updates..."

@@ -16,10 +16,10 @@ sudo ufw allow 443/tcp
 sudo ufw --force enable
 
 # Disable Remote access protocols
-echo("Disabling All Remote Access Tools")
-systemctl stop ssh
-systemctl disable ssh
-echo("Disabled SSH")
+#echo("Disabling All Remote Access Tools")
+#systemctl stop ssh
+#systemctl disable ssh
+#echo("Disabled SSH")
 
 # Install unattended-upgrades for automatic security updates
 echo "Setting up automatic security updates..."

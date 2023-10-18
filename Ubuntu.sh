@@ -27,13 +27,17 @@ sudo apt install unattended-upgrades -y
 sudo dpkg-reconfigure --priority=low unattended-upgrades
 
 # Enable Strong Password Policy
-echo("Enabling Stong Password Policy -   Needs Testing")
+echo "Enabling Stong Password Policy -   Needs Testing"
 sudo vi /etc/pam.d/common-password
 
 # Check All Packages That Are Installed
-echo("Checking what Packages are installed")
+echo "Checking what Packages are installed"
 sudo apt list --installed
 sudo dpkg-query -l
+
+# Checks if packages have been modified than something other than APT OR DPKG
+echo "Checking for modified packages"
+sudo dpkg --verify
 
 # Display a message indicating the script has completed
 echo "Security script execution completed."

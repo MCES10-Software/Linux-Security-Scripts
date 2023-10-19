@@ -1,0 +1,34 @@
+Byte Order Markers (BOM) are special characters used to indicate the byte order 
+and encoding scheme of a text file.
+
+You can use the "xxd" or "vi -b" command to check if a file has a BOM. This is 
+the xxd output of a file encoded with a UTF-8 BOM, which is represented as the 
+byte sequence "EF BB BF":
+
+00000000: efbb bf48 656c 6c6f 2057 6f72 6c64       ...Hello World
+
+With UTF-16, two bytes (16 bits) are required to encode a character. In order 
+to interpret the character correctly, it must be clear whether the bytes are 
+read from left to right or from right to left. The first form of 
+interpretation is known as Big Endian (BE), which stores the most significant 
+byte first, and the latter as Little Endian (LE), which stores the least 
+significant byte first. The big-endian BOM is represented as the byte sequence 
+"FE FF" and little-endian is represented as the byte sequence "FF FE".
+
+UTF-16 BE BOM
+00000000: feff 0048 0065 006c 006c 006f 0020 0057  ...H.e.l.l.o. .W
+00000010: 006f 0072 006c 0064                      .o.r.l.d
+
+UTF-16 LE BOM
+00000000: fffe 4800 6500 6c00 6c00 6f00 2000 5700  ..H.e.l.l.o. .W.
+00000010: 6f00 7200 6c00 6400                      o.r.l.d.
+
+In the text file named message.txt on your Desktop, what is the byte sequence 
+of the BOM used to encode the message?
+
+( HINT: Run the command "xxd /home/korra/Desktop/message.txt" to view the hex 
+dump of the file. )
+
+( EXAMPLE: AA BB CC )
+
+ANSWER: <Type Answer Here>
